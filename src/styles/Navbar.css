@@ -1,0 +1,143 @@
+/* Modern Professional Navbar Styles */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5vw;
+  background: rgba(0, 0, 0, 0.95);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar__logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff !important;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  letter-spacing: -0.5px;
+}
+
+.navbar__logo:hover {
+  color: #b95650 !important;
+}
+
+.navbar__links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navbar__links li {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__links li a {
+  text-decoration: none !important;
+  color: #ffffff !important;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar__links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #b95650;
+  transition: width 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar__links li a:hover {
+  color: #b95650 !important;
+}
+
+.navbar__links li a:hover::after {
+  width: 100%;
+}
+
+/* Active link styling */
+.navbar__links li a.active {
+  color: #b95650 !important;
+}
+
+.navbar__links li a.active::after {
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 4vw;
+  }
+  
+  .navbar__logo {
+    font-size: 1.5rem;
+  }
+  
+  .navbar__links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.98);
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar__links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .navbar__links li {
+    width: 100%;
+  }
+  
+  .navbar__links li a {
+    display: block;
+    padding: 1rem 4vw;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .navbar__links li a::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 1rem 3vw;
+  }
+  
+  .navbar__logo {
+    font-size: 1.3rem;
+  }
+}
+
+
+
+
