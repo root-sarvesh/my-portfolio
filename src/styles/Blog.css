@@ -1,0 +1,152 @@
+/* src/styles/Blog.css */
+
+/* Container & background (shared) */
+.blog__background {
+  min-height: 100vh;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4rem 2rem 2rem;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.blog__container {
+  max-width: 800px;
+  width: 100%;
+  color: #f1f5f9;
+}
+
+/* ---------------------------------------------------
+   Blog List View
+   --------------------------------------------------- */
+.blog__heading {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #b95650;
+}
+
+.blog__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.blog__list-item {
+  margin-bottom: 1.25rem;
+}
+
+.blog__link {
+  display: block;
+  background: #111;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #f1f5f9;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  transition: background 0.2s, transform 0.2s;
+  position: relative;
+}
+
+.blog__link:hover {
+  background: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.blog__link h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+}
+
+.blog__date {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* ---------------------------------------------------
+   Blog Detail View
+   --------------------------------------------------- */
+.blog__back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #b95650;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.blog__back:hover {
+  color: #fff;
+}
+
+.blog__post-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem;
+  color: #ffffff;
+}
+
+.blog__post-date {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 1.5rem;
+}
+
+.blog__post {
+  background: #111;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  position: relative;
+  overflow: hidden;
+}
+
+.blog__post::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  background: linear-gradient(135deg, #b95650 0%, #a0443e 100%);
+}
+
+.blog__post-content {
+  margin: 0;
+  line-height: 1.7;
+  font-size: 1.125rem;
+  color: #e2e8f0;
+  white-space: pre-wrap; /* preserve Lorem Ipsum line breaks */
+}
+
+/* ---------------------------------------------------
+   Responsive
+   --------------------------------------------------- */
+@media (max-width: 768px) {
+  .blog__heading {
+    font-size: 2.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .blog__link {
+    padding: 1.25rem;
+  }
+
+  .blog__link h2 {
+    font-size: 1.5rem;
+  }
+
+  .blog__post {
+    padding: 1.5rem;
+  }
+
+  .blog__post-title {
+    font-size: 2rem;
+  }
+}

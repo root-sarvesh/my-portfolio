@@ -7,14 +7,12 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 .home {
   min-height: 100vh;
-  height: 100vh;
+  height: auto;
   width: 100vw;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,7 +77,11 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-/* Hero Section Styles - Professional Portfolio Design */
+/* 
+  Home (Hero) Page Styles
+  Matches layout, fonts, colors, spacing, and responsiveness
+  for homepage image at /reference/homepage-design.png
+*/
 
 .hero__background {
   height: 100vh;
@@ -88,7 +90,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 

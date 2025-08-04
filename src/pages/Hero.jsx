@@ -8,13 +8,11 @@ function Hero() {
         <div className="hero__content">
           <h1 className="hero__heading">Hi, I'm <span className="hero__name">Sarvesh</span></h1>
           <p className="hero__subheading">
-            I am a <span className="hero__developer">Developer</span> passionate about creating beautiful, functional web experiences.
+            I am a <span className="hero__developer">Developer</span>
           </p>
           <div className="hero__description">
             <p>
-              I specialize in React, Node.js, and modern web technologies. 
-              With 5+ years of experience, I help businesses build scalable 
-              solutions that users love.
+              I'm a passionate developer and tech enthusiast who loves turning ideas into interactive, meaningful digital experiences. Currently building cool things with JavaScript, React, and AI.
             </p>
           </div>
           <div className="hero__buttons">
@@ -28,7 +26,7 @@ function Hero() {
         </div>
         <div className="hero__image-container">
           <img
-            src="/profile.jpg"
+            src="/profileimg2.jpg"
             alt="Sarvesh - Full Stack Developer"
             className="hero__image"
           />
