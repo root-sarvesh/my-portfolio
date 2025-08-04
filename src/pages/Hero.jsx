@@ -6,13 +6,17 @@ function Hero() {
     <div className="hero__background">
       <section className="hero">
         <div className="hero__content">
-          <h1 className="hero__heading">Hi, I'm <span className="hero__name">Sarvesh</span></h1>
+          <h1 className="hero__heading">
+            Hi, I'm <span className="hero__name">Sarvesh</span>
+          </h1>
           <p className="hero__subheading">
             I am a <span className="hero__developer">Developer</span>
           </p>
           <div className="hero__description">
             <p>
-              I'm a passionate developer and tech enthusiast who loves turning ideas into interactive, meaningful digital experiences. Currently building cool things with JavaScript, React, and AI.
+              I'm a passionate developer and tech enthusiast who loves turning
+              ideas into interactive, meaningful digital experiences. Currently
+              building cool things with JavaScript, React, and AI.
             </p>
           </div>
           <div className="hero__buttons">
@@ -38,7 +42,3 @@ function Hero() {
 }
 
 export default Hero;
-
-
-
-

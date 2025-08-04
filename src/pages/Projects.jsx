@@ -6,22 +6,47 @@ import img2 from '../assets/img2.webp';
 import img3 from '../assets/img3.png';
 import img4 from '../assets/img4.png';
 
-const images = [img1, img2, img3, img4];
+const projects = [
+  {
+    img: img1,
+    link: 'https://github.com/root-sarvesh/terminal-website'
+  },
+  {
+    img: img2,
+    link: 'https://github.com/root-sarvesh/InlineMeaningPDF'
+  },
+  {
+    img: img3,
+    link: 'https://github.com/root-sarvesh/Poker_C'
+  },
+  {
+    img: img4,
+    link: 'https://github.com/root-sarvesh/Fruit-Catcher'
+  },
+];
 
-const Projects = () => {
+const RADIUS = 400;
+
+export default function Projects() {
   const [rotation, setRotation] = useState(0);
 
+  // Mouse‐wheel handler (prevents page scroll + spins)
   useEffect(() => {
     const handleWheel = (e) => {
-      e.preventDefault();  
+      e.preventDefault();
       setRotation((prev) => prev + e.deltaY * 0.2);
     };
     window.addEventListener('wheel', handleWheel, { passive: false });
     return () => window.removeEventListener('wheel', handleWheel);
   }, []);
 
-  // smaller radius for tighter spacing
-  const radius = 550;
+  // Auto‐rotate interval
+  useEffect(() => {
+    const id = setInterval(() => {
+      setRotation((prev) => prev + 2); // ~3°/sec (0.3° every 100ms)
+    }, 100);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <div className="projects-container">
@@ -31,21 +56,30 @@ const Projects = () => {
           className="carousel__track"
           style={{ transform: `rotateY(${rotation}deg)` }}
         >
-          {images.map((img, idx) => (
-            <div
-              key={idx}
-              className="carousel__item"
-              style={{
-                transform: `rotateY(${idx * (360 / images.length)}deg) translateZ(${radius}px)`,
-              }}
-            >
-              <img src={img} alt={`Project ${idx + 1}`} />
-            </div>
-          ))}
+          {projects.map((project, idx) => (
+  <div
+    key={idx}
+    className="carousel__item"
+    style={{
+      transform: `
+        translate(-50%, -50%)
+        rotateY(${idx * (360 / projects.length)}deg)
+        translateZ(${RADIUS}px)
+      `,
+    }}
+  >
+    <a
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src={project.img} alt={`Project ${idx + 1}`} />
+    </a>
+  </div>
+))}
+
         </div>
       </div>
     </div>
   );
-};
-
-export default Projects;
+}

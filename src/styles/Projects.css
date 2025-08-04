@@ -11,14 +11,16 @@
   .title {
     font-size: 3rem;
     color: #b95650;
-    margin-top: 4rem;     /* ensure it sits below your navbar */
+    margin: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
   
   .carousel {
     width: 800px;
     height: 533px;
     perspective: 2000px;
-    margin-top: 10rem;    /* big gap before images as requested */
+    padding-top: 1rem;
   }
   
   .carousel__track {
@@ -31,8 +33,8 @@
   
   .carousel__item {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
     width: 500px;
     height: 333px;
     transform-style: preserve-3d;
@@ -44,5 +46,11 @@
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+    transform-origin: center center;
+  }
+  
+  .carousel__item img:hover {
+    transform: scale(1.08);
   }
   
