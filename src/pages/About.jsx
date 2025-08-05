@@ -1,4 +1,6 @@
 import React from "react";
+import ssnLogo from "../assets/ssn.png";
+import ggLogo from "../assets/image.png";
 import "../styles/About.css";
 
 export default function About() {
@@ -9,7 +11,7 @@ export default function About() {
       <div className="timeline">
         <div className="edu-item">
           <div className="edu-icon">
-            <img src=".//assets/ssn.png" alt="SSN Logo" />
+            <img src={ssnLogo} alt="SSN Logo" />
           </div>
           <div className="edu-content">
             <h2>Bachelors of Computer and Communication</h2>
@@ -17,15 +19,13 @@ export default function About() {
               SSN College of Engineering{" "}
               <span className="edu-date">• August 2024 – Present</span>
             </p>
-            <p>
-              Pursuing B.E in Computer Science and Engineering (CSE)
-            </p>
+            <p>Pursuing B.E in Computer Science and Engineering (CSE)</p>
           </div>
         </div>
 
         <div className="edu-item">
           <div className="edu-icon">
-            <img src="../assets/gg.jpg" alt="GG Logo" />
+            <img src={ggLogo} alt="Green Garden Logo" />
           </div>
           <div className="edu-content">
             <h2>High School</h2>
