@@ -1,24 +1,24 @@
-/* page background */
-.about-container {
+ 
+ /* page background */
+  .about-container {
     padding: 2rem;
     background-color: #000;    /* pure black */
     color: #f0f0f0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
-  
+
   /* section title */
   .about-title {
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: #fff;
+    color: #a0443e;
   }
-  
+
   /* timeline wrapper */
   .timeline {
-    position: relative;
-    padding-left: 3rem;       /* space for icons+line */
+    position: relative;     /* space for icons+line */
   }
-  
+
   /* the vertical line */
   .timeline::before {
     content: "";
@@ -27,9 +27,10 @@
     top: 0;
     bottom: 0;
     width: 2px;
+    height: 10rem;
     background-color: #444;
   }
-  
+
   /* each entry */
   .edu-item {
     display: flex;
@@ -37,13 +38,17 @@
     margin-bottom: 2.5rem;
     position: relative;
   }
-  
+
+  #ggLogo{
+    padding-top: 1rem;
+  }
+
   /* icon container (on top of the line) */
   .edu-icon {
     flex: 0 0 auto;
     width: 3rem;
     height: 3rem;
-    background-color: #000;   /* match page bg to “cut out” the line */
+    background-color: black;   /* match page bg to “cut out” the line */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -52,33 +57,147 @@
     left: 0;                   /* aligns with .timeline::before */
     top: 0;
     z-index: 1;
+
   }
-  
+  .edu-icon img{
+    border-radius: 50%;
+    background-color: #000;
+  }
+
   /* logo itself */
   .edu-icon img {
-    max-width: 2rem;
-    max-height: 2rem;
+    max-width: 4rem;
+    max-height: 4rem;
   }
-  
+
   /* the text box, pushed right of the icon */
   .edu-content {
-    margin-left: 4rem;        /* icon width (3rem) + gap (1rem) */
+    margin-left: 6rem;        /* icon width (3rem) + gap (1rem) */
   }
-  
+
   /* heading and sub-text styling */
   .edu-content h2 {
     font-size: 1.25rem;
     margin: 0;
     color: #fff;
   }
-  
+
   .edu-school {
     margin: 0.4rem 0;
     color: #ccc;
   }
-  
+
   .edu-date {
     color: #888;
     font-size: 0.9rem;
   }
-  
+
+  .sketchfab-embed-wrapper {
+    width: 90%; /* Adjust as needed */
+    height: 300px; /* Adjust as needed */
+    margin: 40px auto; /* Centers the container and adds space */
+  }
+
+  .sketchfab-embed-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    padding: 10rem;
+  }
+
+  /* ======================== */
+/* Autotyping Text Section  */
+/* ======================== */
+
+.about-section {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 2rem;
+  background-color: #000; /* match your page bg */
+  color: #fff;
+}
+
+
+.about-text h1 {
+  font-family: 'Alsina', sans-serif;
+  font-size: 3rem; 
+  font-weight: 700;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+/* Custom caret (block style) */
+.typed-cursor {
+  font-weight: bold;
+  color: #fff;
+  font-size: 2.5rem;
+  animation: blink 0.7s infinite;
+}
+
+/* Caret blinking effect */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* ======================== */
+/* Laptop Model Wrapper     */
+/* ======================== */
+
+
+
+
+.about-text {
+  flex: 0 0 700px;   /* reserve fixed space */
+  max-width: 600px;  /* never exceed 450px */
+  padding-right: 2rem;
+  white-space: normal; /* allow text to wrap */
+  padding-top: 8rem;
+  background-color: #000;
+}
+
+.about-laptop {
+  flex: 1;                 /* take remaining space */
+  display: flex;
+  justify-content: flex-end; /* push laptop to the right */
+  align-items: center;
+}
+
+.laptop-canvas {
+  width: 600px;
+  height: 600px;
+}
+.highlight-computer {
+  display: inline;
+  margin-top: 1rem;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #ff004c;  
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  background: none;
+  text-shadow: 0 0 8px #ff3b3b, 0 0 16px #ff5c5c, 0 0 32px #ff8c8c;
+  animation: popIn 1s ease-out forwards, glowPulse 2s infinite alternate;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 5px #ff3b3b, 0 0 10px #ff5c5c, 0 0 20px #ff8c8c;
+  }
+  100% {
+    text-shadow: 0 0 20px #ff3b3b, 0 0 40px #ff5c5c, 0 0 80px #ff8c8c;
+  }
+}
+

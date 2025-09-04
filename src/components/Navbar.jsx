@@ -12,7 +12,7 @@ function Navbar() {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/blog">Blog</Link></li>
         <li><Link to="/projects">Projects</Link></li>
-        <li><Link to="/terminal">Terminal</Link></li>
+        <li><Link to="/terminal">About</Link></li>
       </ul>
     </nav>
   );

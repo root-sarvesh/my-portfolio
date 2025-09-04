@@ -30,11 +30,11 @@ function Hero() {
         </div>
         <div className="hero__image-container">
           <img
-            src="/profileimg2.jpg"
+            src="./profileimg3.jpg"
             alt="Sarvesh - Full Stack Developer"
             className="hero__image"
           />
-          <div className="hero__image-overlay"></div>
+          
         </div>
       </section>
     </div>
