@@ -6,6 +6,7 @@ import ModelViewer from "../components/ModelViewer";
 import ssnLogo from "../assets/ssn-logo.svg";
 import ggLogo from "../assets/image.png";
 import gssocLogo from "../assets/gssocimg.jpg";
+import SocialBar from "../components/SocialBar";
 import "../styles/About.css";
 
 
@@ -114,6 +115,7 @@ export default function About() {
             }}
           />
 
+        <h1 className="about-title">Education</h1>
 
         <div className="timeline">
           <div className="edu-item">
@@ -146,17 +148,24 @@ export default function About() {
         </div>
       </section>
 
-      <section>
-      <h2 style={{ color: "#fff", marginBottom: "2rem" }}>Experience</h2>
+    
+    <section className="about-contact">
+        <h1 className="contact-title">Contact Me</h1>
+        <div className="text-highilight">
+          <p className="contact-text">
+            "I am always open for tech chats, projects and even for coffee dates 😉!"
+          </p>
+        </div>
+      <SocialBar/>
       
-      <ExperienceCard
-        title="Open Source Contributor"
-        role="GirlScript Summer of Code"
-        date="Auguts 2025 - Present"
-        description="Contributing to many open source projects from GSSOC"
-        iconImg={gssocLogo}
-      />
-      </section>
+    </section>
+
+
+        
+
+    
+      
+     
     </div>
   );
 }

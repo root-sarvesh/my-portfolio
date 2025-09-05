@@ -1,33 +1,61 @@
 .education-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
+  padding: 2rem;
+  margin: 2rem 0;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.05); /* glass effect */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.education-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+.education-main-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-color, #fff);
 }
 
+/* Timeline container */
+.education-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  padding-left: 40px;
+}
+
+/* Vertical line */
+.education-timeline::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.education-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  position: relative;
+}
+
+/* Circle for icons */
 .education-icon {
   flex-shrink: 0;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 2;
 }
 
 .education-icon-img {
@@ -41,26 +69,26 @@
 }
 
 .education-title {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text-color);
+  color: var(--text-color, #fff);
   margin: 0;
 }
 
 .education-school {
-  font-size: 1rem;
-  color: var(--text-light);
+  font-size: 0.95rem;
+  color: var(--text-light, #ccc);
   margin: 0.25rem 0;
 }
 
 .education-date {
-  font-size: 0.9rem;
-  color: var(--text-lighter);
+  font-size: 0.85rem;
+  color: var(--text-lighter, #aaa);
 }
 
 .education-description {
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  color: var(--text-color, #ddd);
+  margin-top: 0.25rem;
   line-height: 1.4;
-  color: var(--text-color);
 }

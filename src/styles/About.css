@@ -90,7 +90,6 @@ body {
 }
 
 .about-education {
-  padding-top: 5rem;
   height: 85vh;
   display: flex;
   flex-direction: column;
@@ -185,7 +184,7 @@ body {
   width: 350px;
   height: 350px;
   border-radius: 50%;
-  filter: blur(40px);
+  filter: blur(60px);
   opacity: 0.5;
   mix-blend-mode: lighten;
   pointer-events: none;
@@ -195,12 +194,43 @@ body {
       transparent 70%
     ),
     radial-gradient(
-      circle at 70% 70%,
+      circle at 60% 60%,
       rgba(34, 197, 94, 0.5),
       transparent 80%
     );
   z-index: 1;
 }
 
+.about-contact{
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+   background: 
+    linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), 
+    url("../assets/bg2.avif");
+  width: 100%;
+  height: 70vh;
+}
 
 
+.contact-title{
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+
+
+.contact-text{
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: center;
+  color: bisque;
+  width: 40%;
+  margin: auto;
+  padding-top: 2rem;
+}
