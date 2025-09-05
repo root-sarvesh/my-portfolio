@@ -30,7 +30,7 @@ function Hero() {
         </div>
         <div className="hero__image-container">
           <img
-            src="./profileimg3.jpg"
+            src="src/assets/face.webp"
             alt="Sarvesh - Full Stack Developer"
             className="hero__image"
           />

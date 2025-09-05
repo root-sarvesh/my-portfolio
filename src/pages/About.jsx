@@ -1,17 +1,77 @@
-import React, { useState } from "react";
-import { ReactTyped } from "react-typed";
+import React, { useState, useEffect } from "react";
+import { ReactTyped } from "react-typed"; 
+import ExperienceCard from "../components/ExperinceCard";
+import EducationCard from "../components/EducationCard";
 import ModelViewer from "../components/ModelViewer";
 import ssnLogo from "../assets/ssn-logo.svg";
 import ggLogo from "../assets/image.png";
+import gssocLogo from "../assets/gssocimg.jpg";
 import "../styles/About.css";
+
 
 export default function About() {
   const [showComputer, setShowComputer] = useState(false);
+  const [pos,setPos] = useState({x:0,y:0});
+  const [target,setTarget] = useState({x:0,y:0})
+  
+
+  //For scroll animation
+  useEffect(() => {
+    const scrollElements = document.querySelectorAll(
+      ".about-education .about-title, .about-education .edu-item"
+    );
+
+
+    const elementInView = (el, fraction = 1.25) => {
+      const top = el.getBoundingClientRect().top;
+      return top <= (window.innerHeight || document.documentElement.clientHeight) / fraction;
+    };
+
+    const handleScroll = () => {
+      scrollElements.forEach((el) => {
+        if (elementInView(el)) {
+          el.classList.add("visible");
+        }
+      });
+    };
+
+    handleScroll(); // trigger on load
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  //for mouse following
+  useEffect(() => {
+  const handleMouseMove = (e) => {
+    setTarget({ x: e.clientX, y: e.clientY });
+  };
+
+  window.addEventListener("mousemove", handleMouseMove);
+  return () => window.removeEventListener("mousemove", handleMouseMove);
+}, []);
+
+  //for interpolation effect
+   useEffect(() => {
+    let animationFrame;
+
+    const animate = () => {
+      setPos((prev) => {
+        const ease = 0.08; // smaller = slower, smokier lag
+        const x = prev.x + (target.x - prev.x) * ease;
+        const y = prev.y + (target.y - prev.y) * ease;
+        return { x, y };
+      });
+      animationFrame = requestAnimationFrame(animate);
+    };
+
+    animate();
+    return () => cancelAnimationFrame(animationFrame);
+  }, [target]);
+
 
   return (
-    <div className="about-container">
+    <div className="about-container" style={{ position: "relative", overflow: "hidden" }}>
 
-    
       <section className="about-section">
         <div className="about-text">
           <h1>
@@ -25,8 +85,8 @@ export default function About() {
               onComplete={() => {
                 const caret = document.querySelector(".typed-cursor");
                 if (caret) caret.style.display = "none";
-                setShowComputer(true)
-              }} 
+                setShowComputer(true);
+              }}
             />
             <br />
             {showComputer && (
@@ -43,7 +103,17 @@ export default function About() {
       </section>
 
       <section className="about-education">
-        <h1 className="about-title">Education</h1>
+
+        {/* Smoky Gradient Follower */}
+          <div
+            className="smoky-gradient"
+            style={{
+              left: pos.x,
+              top: pos.y,
+              transform: "translate(-50%, -50%)",
+            }}
+          />
+
 
         <div className="timeline">
           <div className="edu-item">
@@ -51,7 +121,7 @@ export default function About() {
               <img src={ssnLogo} alt="SSN Logo" />
             </div>
             <div className="edu-content">
-              <h2>Bachelors of Computer and Communication</h2>
+              <h2>Bachelors of Computer Science and Engineering</h2>
               <p className="edu-school">
                 SSN College of Engineering{" "}
                 <span className="edu-date">• August 2024 – Present</span>
@@ -61,7 +131,7 @@ export default function About() {
           </div>
 
           <div className="edu-item">
-            <div id="ggLogo" className="edu-icon">
+            <div className="edu-icon">
               <img src={ggLogo} alt="Green Garden Logo" />
             </div>
             <div className="edu-content">
@@ -76,6 +146,17 @@ export default function About() {
         </div>
       </section>
 
+      <section>
+      <h2 style={{ color: "#fff", marginBottom: "2rem" }}>Experience</h2>
+      
+      <ExperienceCard
+        title="Open Source Contributor"
+        role="GirlScript Summer of Code"
+        date="Auguts 2025 - Present"
+        description="Contributing to many open source projects from GSSOC"
+        iconImg={gssocLogo}
+      />
+      </section>
     </div>
   );
 }

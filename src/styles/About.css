@@ -1,203 +1,206 @@
- 
- /* page background */
-  .about-container {
-    padding: 2rem;
-    background-color: #000;    /* pure black */
-    color: #f0f0f0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  background-color: var(--bg-color);
+}
 
-  /* section title */
-  .about-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #a0443e;
-  }
+.about-container {
+  padding: 2rem;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+}
 
-  /* timeline wrapper */
-  .timeline {
-    position: relative;     /* space for icons+line */
-  }
 
-  /* the vertical line */
-  .timeline::before {
-    content: "";
-    position: absolute;
-    left: 1.5rem;             /* half of padding-left */
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    height: 10rem;
-    background-color: #444;
-  }
-
-  /* each entry */
-  .edu-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 2.5rem;
-    position: relative;
-  }
-
-  #ggLogo{
-    padding-top: 1rem;
-  }
-
-  /* icon container (on top of the line) */
-  .edu-icon {
-    flex: 0 0 auto;
-    width: 3rem;
-    height: 3rem;
-    background-color: black;   /* match page bg to “cut out” the line */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: 0;                   /* aligns with .timeline::before */
-    top: 0;
-    z-index: 1;
-
-  }
-  .edu-icon img{
-    border-radius: 50%;
-    background-color: #000;
-  }
-
-  /* logo itself */
-  .edu-icon img {
-    max-width: 4rem;
-    max-height: 4rem;
-  }
-
-  /* the text box, pushed right of the icon */
-  .edu-content {
-    margin-left: 6rem;        /* icon width (3rem) + gap (1rem) */
-  }
-
-  /* heading and sub-text styling */
-  .edu-content h2 {
-    font-size: 1.25rem;
-    margin: 0;
-    color: #fff;
-  }
-
-  .edu-school {
-    margin: 0.4rem 0;
-    color: #ccc;
-  }
-
-  .edu-date {
-    color: #888;
-    font-size: 0.9rem;
-  }
-
-  .sketchfab-embed-wrapper {
-    width: 90%; /* Adjust as needed */
-    height: 300px; /* Adjust as needed */
-    margin: 40px auto; /* Centers the container and adds space */
-  }
-
-  .sketchfab-embed-wrapper iframe {
-    width: 100%;
-    height: 100%;
-    padding: 10rem;
-  }
-
-  /* ======================== */
-/* Autotyping Text Section  */
-/* ======================== */
 
 .about-section {
   display: flex;
   align-items: start;
+  min-height: 100vh;
   justify-content: space-between;
-  height: 100vh;
-  padding: 2rem;
-  background-color: #000; /* match your page bg */
-  color: #fff;
+  color: var(--text-color);
+  position: relative;
 }
 
+.about-text {
+  max-width: 600px;
+  padding-left: 4rem;
+  padding-top: 7rem;
+}
 
 .about-text h1 {
+  min-width: 450px;
   font-family: 'Alsina', sans-serif;
-  font-size: 3rem; 
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1.5;
   overflow: hidden;
 }
 
-/* Custom caret (block style) */
 .typed-cursor {
   font-weight: bold;
-  color: #fff;
+  color: var(--text-color);
   font-size: 2.5rem;
   animation: blink 0.7s infinite;
 }
 
-/* Caret blinking effect */
 @keyframes blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
 }
 
-/* ======================== */
-/* Laptop Model Wrapper     */
-/* ======================== */
-
-
-
-
-.about-text {
-  flex: 0 0 700px;   /* reserve fixed space */
-  max-width: 600px;  /* never exceed 450px */
-  padding-right: 2rem;
-  white-space: normal; /* allow text to wrap */
-  padding-top: 8rem;
-  background-color: #000;
-}
-
 .about-laptop {
-  flex: 1;                 /* take remaining space */
+  flex: 1;
   display: flex;
-  justify-content: flex-end; /* push laptop to the right */
+  justify-content: flex-end;
   align-items: center;
 }
 
 .laptop-canvas {
-  width: 600px;
-  height: 600px;
+  width: 800px;
+  height: 800px;
 }
+
 .highlight-computer {
   display: inline;
   margin-top: 1rem;
   font-size: 3.5rem;
   font-weight: 900;
-  color: #ff004c;  
+  color: var(--secondary-color);
   text-transform: uppercase;
   letter-spacing: 4px;
   background: none;
-  text-shadow: 0 0 8px #ff3b3b, 0 0 16px #ff5c5c, 0 0 32px #ff8c8c;
-  animation: popIn 1s ease-out forwards, glowPulse 2s infinite alternate;
+  animation: popIn 1s ease-out forwards, hackerGlow 1.5s infinite alternate;
 }
 
 @keyframes popIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.5) translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+  0% { opacity: 0; transform: scale(0.5) translateY(30px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-@keyframes glowPulse {
-  0% {
-    text-shadow: 0 0 5px #ff3b3b, 0 0 10px #ff5c5c, 0 0 20px #ff8c8c;
-  }
-  100% {
-    text-shadow: 0 0 20px #ff3b3b, 0 0 40px #ff5c5c, 0 0 80px #ff8c8c;
-  }
+@keyframes hackerGlow {
+  0% { text-shadow: 0 0 5px var(--secondary-color), 0 0 10px var(--secondary-color), 0 0 15px var(--secondary-color); }
+  50% { text-shadow: 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color), 0 0 30px var(--secondary-color); }
+  100% { text-shadow: 0 0 15px var(--secondary-color), 0 0 30px var(--secondary-color), 0 0 45px var(--secondary-color); }
 }
+
+.about-education {
+  padding-top: 5rem;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+   background: 
+    linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), 
+    url("../assets/bg2.avif");
+  width: 100%;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+  .timeline {
+    position: relative;
+    flex: 1;
+    margin-top: 3rem;
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 11rem;
+    top: 4rem;
+    bottom: 0;
+    width: 2px;
+    height: 6.2rem;
+    background-color: var(--line-color);
+  }
+
+.edu-item {
+  display: flex;
+  align-items: start;
+  margin-bottom: 2.5rem;
+  padding-top: 1rem;
+  padding-left: 9rem;
+  position: relative;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.edu-item.visible,
+.about-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+.edu-icon img {
+  border-radius: 50%;
+  background-color: var(--bg-color);  
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.edu-content {
+  margin-left: 3rem;
+}
+
+.edu-content h2 {
+  font-size: 1.25rem;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.edu-school {
+  margin: 0.4rem 0;
+  color: var(--text-light);
+}
+
+.edu-date {
+  color: var(--text-lighter);
+  font-size: 0.9rem;
+}
+
+
+.smoky-gradient {
+  position: fixed;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.5;
+  mix-blend-mode: lighten;
+  pointer-events: none;
+  background: radial-gradient(
+      circle at 30% 30%,
+      rgba(168, 85, 247, 0.6),
+      transparent 70%
+    ),
+    radial-gradient(
+      circle at 70% 70%,
+      rgba(34, 197, 94, 0.5),
+      transparent 80%
+    );
+  z-index: 1;
+}
+
+
 

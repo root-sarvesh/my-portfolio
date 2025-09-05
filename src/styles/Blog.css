@@ -1,4 +1,4 @@
-/* src/styles/Blog.css */
+@import 'variables.css';
 
 /* Container & background (shared) */
 .blog__background {
@@ -29,7 +29,7 @@
 
   text-align: center;
   margin-bottom: 2.5rem;
-  color: #b95650;
+  color: var(--primary-color);
 }
 
 .blog__list {
