@@ -126,13 +126,47 @@
   white-space: pre-wrap; /* preserve Lorem Ipsum line breaks */
 }
 
-/* ---------------------------------------------------
-   Responsive
-   --------------------------------------------------- */
+/* ========================= */
+/* MOBILE RESPONSIVE STYLES  */
+/* ========================= */
+
+@media (max-width: 1024px) {
+  .blog__heading {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .blog__link {
+    padding: 1.5rem;
+  }
+
+  .blog__link h2 {
+    font-size: 1.6rem;
+  }
+
+  .blog__post {
+    padding: 1.75rem;
+  }
+
+  .blog__post-title {
+    font-size: 2.25rem;
+  }
+
+  .blog__post-content {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+}
+
 @media (max-width: 768px) {
   .blog__heading {
     font-size: 2.25rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .blog__container {
+    padding: 1rem;
+    width: 95%;
   }
 
   .blog__link {
@@ -143,11 +177,65 @@
     font-size: 1.5rem;
   }
 
+  .blog__date {
+    font-size: 0.85rem;
+  }
+
   .blog__post {
     padding: 1.5rem;
+    border-radius: 12px;
   }
 
   .blog__post-title {
     font-size: 2rem;
   }
+
+  .blog__post-content {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .blog__back {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
 }
+
+@media (max-width: 480px) {
+  .blog__heading {
+    font-size: 1.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .blog__link {
+    padding: 1rem;
+  }
+
+  .blog__link h2 {
+    font-size: 1.25rem;
+  }
+
+  .blog__date {
+    font-size: 0.8rem;
+  }
+
+  .blog__post {
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+
+  .blog__post-title {
+    font-size: 1.75rem;
+  }
+
+  .blog__post-content {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .blog__back {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+}
+

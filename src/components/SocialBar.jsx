@@ -21,19 +21,19 @@
         onMouseLeave={() => setHoverSide("")}
         >
         <div className="social-bar">
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+            <a href="https://www.linkedin.com/in/sarvesh-k-p-98006b310/" target="_blank" rel="noreferrer">
             <FaLinkedin />
             </a>
-            <a href="mailto:youremail@gmail.com">
+            <a href="mailto:sarveshkp23@gmail.com">
             <MdEmail />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">
-            <FaInstagram />
-            </a>
-            <a href="https://github.com" target="_blank" rel="noreferrer">
+            <a href="https://github.com/root-sarvesh" target="_blank" rel="noreferrer">
             <FaGithub />
             </a>
-            <a href="https://discord.com" target="_blank" rel="noreferrer">
+            <a href="https://instagram.com/sarvesh__kp" target="_blank" rel="noreferrer">
+            <FaInstagram />
+            </a>
+            <a href="https://discordapp.com/users/1255566101622820875" target="_blank" rel="noreferrer">
             <FaDiscord />
             </a>
         </div>

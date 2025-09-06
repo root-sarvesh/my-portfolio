@@ -79,64 +79,91 @@
 .navbar__links li a.active::after {
   width: 100%;
 }
+/* Hamburger button for mobile */
+.navbar__hamburger {
+  display: none; /* hidden on desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 11011; /* above menu */
+}
 
-/* Responsive Design */
+.navbar__hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger animation when open */
+.navbar__hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar__hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}/* ---------- Mobile Navbar ---------- */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 1rem 4vw;
+  .navbar__hamburger {
+    display: flex;
+    z-index: 2100; /* above menu */
   }
-  
-  .navbar__logo {
-    font-size: 1.5rem;
-  }
-  
+
   .navbar__links {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.98);
+    width: 100%;
+    height: 100vh; /* full screen */
+    background: var(--primary-color, #a0443e); /* solid background */
     flex-direction: column;
-    gap: 0;
-    padding: 1rem 0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    justify-content: center; /* vertical centering */
+    align-items: center; /* horizontal centering */
+    gap: 2.5rem;
+    padding: 0;
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+    z-index: 2000; /* above hero content */
   }
-  
+
   .navbar__links.active {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
   }
-  
+
   .navbar__links li {
     width: 100%;
   }
-  
+
   .navbar__links li a {
     display: block;
-    padding: 1rem 4vw;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    text-align: center; /* center text horizontally */
+    padding: 1.5rem 0; /* bigger touch area */
+    font-size: 1.5rem;
+    color: #fff;
+    border-bottom: none;
+    cursor: pointer;
+    z-index: 2100;
   }
-  
+
   .navbar__links li a::after {
     display: none;
   }
-}
 
-@media (max-width: 480px) {
-  .navbar {
-    padding: 1rem 3vw;
-  }
-  
-  .navbar__logo {
-    font-size: 1.3rem;
+  /* Hide scrollbar on mobile menu */
+  .navbar__links::-webkit-scrollbar {
+    display: none;
   }
 }
-
-
-
-

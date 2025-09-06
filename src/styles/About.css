@@ -7,7 +7,6 @@ body {
 }
 
 .about-container {
-  padding: 2rem;
   color: var(--text-color);
   display: flex;
   flex-direction: column;
@@ -47,6 +46,10 @@ body {
   color: var(--text-color);
   font-size: 2.5rem;
   animation: blink 0.7s infinite;
+}
+
+.laptop-canvas{
+  padding-top: 2rem;
 }
 
 @keyframes blink {
@@ -199,7 +202,22 @@ body {
       transparent 80%
     );
   z-index: 1;
+
+  /* Subtle steady glow animation */
+  animation: softGlow 1.5s infinite alternate;
 }
+
+@keyframes softGlow {
+  0% {
+    opacity: 0.45;
+    filter: blur(60px);
+  }
+  100% {
+    opacity: 0.6;
+    filter: blur(62px);
+  }
+}
+
 
 .about-contact{
   padding-top: 5rem;
@@ -233,4 +251,136 @@ body {
   width: 40%;
   margin: auto;
   padding-top: 2rem;
+  letter-spacing: 5px;
+}
+
+.scroll-item {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.secret{
+  padding-top: 13rem;
+  padding-left: 2rem;
+  opacity: 0.3;
+  text-align: end;
+  font-size: 14px;
+}
+
+
+/* Existing CSS is unchanged above this point */
+/* ========================= */
+/* MOBILE RESPONSIVE STYLES  */
+/* ========================= */
+
+@media (max-width: 1024px) {
+  /* Stack text and laptop vertically */
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 3rem;
+    text-align: center;
+  }
+
+  .about-text {
+    padding-left: 0;
+    padding-top: 1rem;
+    max-width: 90%;
+  }
+
+  .about-text h1 {
+    font-size: 2.2rem;
+    min-width: unset;
+    line-height: 1.4;
+  }
+
+  .highlight-computer {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+
+  /* Make laptop visible + smaller */
+  .about-laptop {
+    justify-content: center;
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .laptop-canvas {
+    height: auto;
+  }
+
+  /* Timeline adjustments */
+  .timeline::before {
+    display: none;
+  }
+
+  .edu-item {
+    flex-direction: column;
+    padding-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .edu-content {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+
+  
+  .about-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .highlight-computer {
+    font-size: 1.8rem;
+  }
+
+  .laptop-canvas {
+    max-width: 400px;
+  }
+
+  .about-title,
+  .contact-title {
+    font-size: 1.8rem;
+  }
+
+  .contact-text {
+    font-size: 1rem;
+    width: 90%;
+    letter-spacing: 3px;
+    line-height: 1.5rem;
+  }
+
+  .edu-content h2 {
+    font-size: 1rem;
+  }
+
+  .edu-school {
+    font-size: 0.85rem;
+  }
+
+  .edu-date {
+    font-size: 0.75rem;
+  }
+
+  
+ 
+  .secret {
+    bottom: 2rem; /* little extra space above footer on mobile */
+    right: 1rem;
+    font-size: 12px; /* smaller for mobile */
+  }
+
+
 }

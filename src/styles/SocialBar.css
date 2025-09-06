@@ -1,76 +1,83 @@
-.social-bar-wrapper {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 20px;
-  padding: 2px; /* space for border */
-  background: transparent;
-  transition: all 0.5s ease;
-}
+  .social-bar-wrapper {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    padding: 2px; /* space for border */
+    background: transparent;
+    transition: all 0.5s ease;
+  }
 
-.social-bar {
-  display: flex;
-  gap: 22px;
-  padding: 12px 28px;
-  background: rgba(0, 0, 0, 0.35); /* glassy inside */
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  position: relative;
-  z-index: 1;
-}
+  .social-bar {
+    display: flex;
+    gap: 22px;
+    padding: 12px 28px;
+    background: rgba(0, 0, 0, 0.35); /* glassy inside */
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+  }
 
-.social-bar a {
-  font-size: 22px;
-  color: white;
-  padding: 10px;
-  border-radius: 10px;
-  transition: transform 0.25s ease, color 0.3s ease;
-}
+  .social-bar a {
+    font-size: 22px;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    transition: transform 0.25s ease, color 0.3s ease;
+  }
 
-.social-bar a:hover {
-  transform: translateY(-4px);
-}
+  .social-bar a:hover {
+    transform: translateY(-4px);
+  }
 
-/* Rainbow border pseudo-element */
-.social-bar-wrapper::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  border-radius: 22px;
-  padding: 2px; /* border thickness */
-  z-index: 0;
-  pointer-events: none;
+  /* Rainbow border pseudo-element */
+  .social-bar-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 22px;
+    padding: 2px; /* border thickness */
+    z-index: 0;
+    pointer-events: none;
 
-  background: linear-gradient(
-    var(--gradient-direction, to left),
-     orange, yellow, green, violet
-  );
-  background-size: 300% 300%;
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
+    background: linear-gradient(
+      var(--gradient-direction, to left),
+      orange, yellow, green, violet, rgb(229, 79, 79), rgb(107, 3, 234)
+    );
+    background-size: 300% 300%;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
 
-  opacity: 0;
-  transition: opacity 0.5s ease, background 0.5s ease;
-  animation: rainbow-move 5s linear infinite;
-}
+    opacity: 0;
+    transition: opacity 0.5s ease, background 0.5s ease;
+    animation: rainbow-move 5s linear infinite;
+  }
 
-/* Show the rainbow border on hover */
-.social-bar-wrapper.left:hover::before {
-  --gradient-direction: to left;
-  opacity: 1;
-}
+  /* Show the rainbow border on hover */
+  .social-bar-wrapper.left:hover::before {
+    --gradient-direction: to left;
+    opacity: 1;
+  }
 
-.social-bar-wrapper.right:hover::before {
-  --gradient-direction: to right;
-  opacity: 1;
-}
+  .social-bar-wrapper.right:hover::before {
+    --gradient-direction: to right;
+    opacity: 1;
+  }
 
-/* Animate rainbow */
-@keyframes rainbow-move {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
+  /* Animate rainbow */
+  @keyframes rainbow-move {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+  }
+  
+
+  @media (max-width: 600px) {
+  .social-bar-wrapper {
+    bottom: 350px; 
+  }
 }

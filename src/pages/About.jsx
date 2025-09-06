@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ReactTyped } from "react-typed"; 
 import ExperienceCard from "../components/ExperinceCard";
 import EducationCard from "../components/EducationCard";
+import Footer from "../components/Footer";
 import ModelViewer from "../components/ModelViewer";
 import ssnLogo from "../assets/ssn-logo.svg";
 import ggLogo from "../assets/image.png";
@@ -18,29 +19,27 @@ export default function About() {
 
   //For scroll animation
   useEffect(() => {
-    const scrollElements = document.querySelectorAll(
-      ".about-education .about-title, .about-education .edu-item"
-    );
+  const scrollElements = document.querySelectorAll(
+    ".about-education .about-title, .about-education .edu-item, .about-contact .scroll-item"
+  );
 
+  const elementInView = (el, fraction = 1.25) => {
+    const top = el.getBoundingClientRect().top;
+    return top <= (window.innerHeight || document.documentElement.clientHeight) / fraction;
+  };
 
-    const elementInView = (el, fraction = 1.25) => {
-      const top = el.getBoundingClientRect().top;
-      return top <= (window.innerHeight || document.documentElement.clientHeight) / fraction;
-    };
+  const handleScroll = () => {
+    scrollElements.forEach((el) => {
+      if (elementInView(el)) {
+        el.classList.add("visible");
+      }
+    });
+  };
 
-    const handleScroll = () => {
-      scrollElements.forEach((el) => {
-        if (elementInView(el)) {
-          el.classList.add("visible");
-        }
-      });
-    };
-
-    handleScroll(); // trigger on load
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+  handleScroll(); // trigger on load
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
   //for mouse following
   useEffect(() => {
   const handleMouseMove = (e) => {
@@ -150,21 +149,18 @@ export default function About() {
 
     
     <section className="about-contact">
-        <h1 className="contact-title">Contact Me</h1>
-        <div className="text-highilight">
+        <h1 className="contact-title scroll-item">Contact Me</h1>
+        <div className="text-highilight scroll-item">
           <p className="contact-text">
-            "I am always open for tech chats, projects and even for coffee dates 😉!"
+            "I am always open for tech chats, projects and experiments"
           </p>
+          <p className="secret">even for coffee dates... 🤫</p>
         </div>
       <SocialBar/>
       
     </section>
 
-
-        
-
-    
-      
+    <Footer/>
      
     </div>
   );

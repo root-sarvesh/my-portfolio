@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import '../styles/Home.css';
 
 function Hero() {
@@ -10,20 +10,20 @@ function Hero() {
             Hi, I'm <span className="hero__name">Sarvesh</span>
           </h1>
           <p className="hero__subheading">
-            I am a <span className="hero__developer">Developer</span>
+            I am a <span className="hero__developer"> Web Developer</span>
           </p>
           <div className="hero__description">
             <p>
-              I'm a passionate developer and tech enthusiast who loves turning
+              A tech enthusiast who loves turning
               ideas into interactive, meaningful digital experiences. Currently
               building cool things with JavaScript, React, and AI.
             </p>
           </div>
           <div className="hero__buttons">
-            <a href="#projects" className="hero__cta hero__cta--primary">
+             <Link to="/projects" className="hero__cta hero__cta--primary">
               View My Work
-            </a>
-            <a href="#contact" className="hero__cta hero__cta--secondary">
+            </Link>
+            <a href="mailto:sarveshkp23@gmail.com" className="hero__cta hero__cta--secondary">
               Get In Touch
             </a>
           </div>

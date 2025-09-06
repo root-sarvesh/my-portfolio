@@ -55,3 +55,21 @@
     transform: scale(1.08);
   }
   
+
+  /* Mobile responsive */
+@media (max-width: 768px) {
+  .carousel {
+    width: 300px;  /* smaller width */
+    height: 200px; /* smaller height */
+  }
+
+  .carousel__item {
+    width: 180px;   /* smaller item width */
+    height: 120px;  /* smaller item height */
+  }
+
+  .carousel__item img {
+    width: 100%;
+    height: 100%;
+  }
+}
