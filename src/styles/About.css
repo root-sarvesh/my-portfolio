@@ -266,7 +266,7 @@ body {
 }
 
 .secret{
-  padding-top: 13rem;
+  padding-top: 12rem;
   padding-left: 2rem;
   opacity: 0.3;
   text-align: end;
@@ -289,7 +289,6 @@ body {
   }
 
   .about-text {
-    padding-left: 0;
     padding-top: 1rem;
     max-width: 90%;
   }
@@ -298,6 +297,7 @@ body {
     font-size: 2.2rem;
     min-width: unset;
     line-height: 1.4;
+    padding-left: 5rem;
   }
 
   .highlight-computer {
