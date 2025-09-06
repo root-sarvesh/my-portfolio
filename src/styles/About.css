@@ -297,7 +297,6 @@ body {
     font-size: 2.2rem;
     min-width: unset;
     line-height: 1.4;
-    padding-left: 5rem;
   }
 
   .highlight-computer {
@@ -373,8 +372,6 @@ body {
     font-size: 0.75rem;
   }
 
-  
- 
   .secret {
     bottom: 2rem; 
     right: 1rem;
