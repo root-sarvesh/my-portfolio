@@ -82,19 +82,25 @@ export default function Projects() {
           className="carousel__track"
           style={{ transform: `rotateY(${-rotation}deg)` }}
         >
-          {projects.map((project, idx) => (
-            <div
-              key={idx}
-              className="carousel__item"
-              style={{
-                transform: `translate(-50%, -50%) rotateY(${idx * (360 / projects.length)}deg) translateZ(${radius}px)`,
-              }}
-            >
-              <a href={project.link} target="_blank" rel="noopener noreferrer">
-                <img src={project.img} alt={`Project ${idx + 1}`} />
-              </a>
-            </div>
-          ))}
+          {projects.map((project, idx) => {
+            const angle = idx * (360 / projects.length) - rotation;
+            const normalized = ((angle + 180) % 360) - 180;
+            const isFront = Math.abs(normalized) < 90; // front half
+            return (
+              <div
+                key={idx}
+                className="carousel__item"
+                style={{
+                  transform: `translate(-50%, -50%) rotateY(${idx * (360 / projects.length)}deg) translateZ(${radius}px)`,
+                  zIndex: isFront ? 10 : 1, // front item clickable
+                }}
+              >
+                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                  <img src={project.img} alt={`Project ${idx + 1}`} />
+                </a>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
