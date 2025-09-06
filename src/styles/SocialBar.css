@@ -4,7 +4,7 @@
     left: 50%;
     transform: translateX(-50%);
     border-radius: 20px;
-    padding: 2px; /* space for border */
+    padding: 2px; 
     background: transparent;
     transition: all 0.5s ease;
   }

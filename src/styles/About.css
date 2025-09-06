@@ -274,13 +274,12 @@ body {
 }
 
 
-/* Existing CSS is unchanged above this point */
+
 /* ========================= */
 /* MOBILE RESPONSIVE STYLES  */
 /* ========================= */
 
 @media (max-width: 1024px) {
-  /* Stack text and laptop vertically */
   .about-section {
     flex-direction: column;
     align-items: center;
@@ -306,7 +305,7 @@ body {
     letter-spacing: 2px;
   }
 
-  /* Make laptop visible + smaller */
+
   .about-laptop {
     justify-content: center;
     margin-top: 2rem;
@@ -317,7 +316,7 @@ body {
     height: auto;
   }
 
-  /* Timeline adjustments */
+
   .timeline::before {
     display: none;
   }
@@ -377,9 +376,9 @@ body {
   
  
   .secret {
-    bottom: 2rem; /* little extra space above footer on mobile */
+    bottom: 2rem; 
     right: 1rem;
-    font-size: 12px; /* smaller for mobile */
+    font-size: 12px;
   }
 
 

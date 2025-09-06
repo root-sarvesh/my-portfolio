@@ -1,6 +1,5 @@
 @import 'variables.css';
 
-/* Container & background (shared) */
 .blog__background {
   min-height: 100vh;
   background: #000;
@@ -20,9 +19,6 @@
   color: #f1f5f9;
 }
 
-/* ---------------------------------------------------
-   Blog List View
-   --------------------------------------------------- */
 .blog__heading {
   font-size: 3rem;
   font-weight: 800;
@@ -70,9 +66,7 @@
   color: #888;
 }
 
-/* ---------------------------------------------------
-   Blog Detail View
-   --------------------------------------------------- */
+
 .blog__back {
   display: inline-block;
   margin-bottom: 1.5rem;
@@ -123,7 +117,7 @@
   line-height: 1.7;
   font-size: 1.125rem;
   color: #e2e8f0;
-  white-space: pre-wrap; /* preserve Lorem Ipsum line breaks */
+  white-space: pre-wrap; 
 }
 
 /* ========================= */

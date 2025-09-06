@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import '../styles/Home.css';
+import heroimg from "../assets/face.webp"
+
 
 function Hero() {
   return (
@@ -30,7 +32,7 @@ function Hero() {
         </div>
         <div className="hero__image-container">
           <img
-            src="src/assets/face.webp"
+            src={heroimg}
             alt="Sarvesh - Full Stack Developer"
             className="hero__image"
           />
