@@ -11,7 +11,7 @@ function Navbar() {
         Portfolio
       </Link>
 
-      {/* Hamburger button */}
+      
       <div
         className={`navbar__hamburger ${isOpen ? "open" : ""}`}
         onClick={() => setIsOpen(!isOpen)}
@@ -21,7 +21,7 @@ function Navbar() {
         <span></span>
       </div>
 
-      {/* Links */}
+     
       <ul className={`navbar__links ${isOpen ? "active" : ""}`}>
         <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
         <li><Link to="/blog" onClick={() => setIsOpen(false)}>Blog</Link></li>

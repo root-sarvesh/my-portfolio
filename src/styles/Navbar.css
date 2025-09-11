@@ -71,7 +71,7 @@
   width: 100%;
 }
 
-/* Active link styling */
+
 .navbar__links li a.active {
   color: var(--primary-color) !important;
 }
@@ -79,15 +79,15 @@
 .navbar__links li a.active::after {
   width: 100%;
 }
-/* Hamburger button for mobile */
+
 .navbar__hamburger {
-  display: none; /* hidden on desktop */
+  display: none; 
   flex-direction: column;
   justify-content: space-between;
   width: 25px;
   height: 20px;
   cursor: pointer;
-  z-index: 11011; /* above menu */
+  z-index: 11011; 
 }
 
 .navbar__hamburger span {
@@ -99,7 +99,6 @@
   transition: all 0.3s ease;
 }
 
-/* Hamburger animation when open */
 .navbar__hamburger.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -110,11 +109,11 @@
 
 .navbar__hamburger.open span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
-}/* ---------- Mobile Navbar ---------- */
+}
 @media (max-width: 768px) {
   .navbar__hamburger {
     display: flex;
-    z-index: 2100; /* above menu */
+    z-index: 2100; 
   }
 
   .navbar__links {
@@ -122,18 +121,18 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; /* full screen */
-    background: var(--primary-color, #a0443e); /* solid background */
+    height: 100vh; 
+    background: var(--primary-color, #a0443e); 
     flex-direction: column;
-    justify-content: center; /* vertical centering */
-    align-items: center; /* horizontal centering */
+    justify-content: center; 
+    align-items: center; 
     gap: 2.5rem;
     padding: 0;
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    z-index: 2000; /* above hero content */
+    z-index: 2000; 
   }
 
   .navbar__links.active {
@@ -149,8 +148,8 @@
   .navbar__links li a {
     display: block;
     width: 100%;
-    text-align: center; /* center text horizontally */
-    padding: 1.5rem 0; /* bigger touch area */
+    text-align: center; 
+    padding: 1.5rem 0; 
     font-size: 1.5rem;
     color: #fff;
     border-bottom: none;
@@ -162,7 +161,7 @@
     display: none;
   }
 
-  /* Hide scrollbar on mobile menu */
+
   .navbar__links::-webkit-scrollbar {
     display: none;
   }
