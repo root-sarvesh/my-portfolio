@@ -1,4 +1,3 @@
-// src/pages/BlogList.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import blogPosts from '../data/blogPosts';

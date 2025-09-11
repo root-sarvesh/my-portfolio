@@ -1,4 +1,3 @@
-// src/data/blogPosts.js
 const blogPosts = [
     {
       id: 1,
@@ -25,7 +24,7 @@ const blogPosts = [
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         `
       }
-    // you can add more posts here...
+   
   ];
   
   export default blogPosts;

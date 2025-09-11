@@ -21,7 +21,7 @@ export default function Projects() {
   const [touchStartX, setTouchStartX] = useState(null);
   const [radius, setRadius] = useState(RADIUS_DESKTOP);
 
-  // Horizontal wheel only
+ 
   useEffect(() => {
     const handleWheel = (e) => {
       e.preventDefault();
@@ -33,14 +33,14 @@ export default function Projects() {
     return () => window.removeEventListener('wheel', handleWheel);
   }, []);
 
-  // Mobile swipe
+
   useEffect(() => {
     const handleTouchStart = (e) => setTouchStartX(e.touches[0].clientX);
 
     const handleTouchMove = (e) => {
       if (touchStartX !== null) {
         const deltaX = touchStartX - e.touches[0].clientX;
-        setRotation((prev) => prev - deltaX * 0.5);
+        setRotation((prev) => prev + deltaX * 0.5);
         setTouchStartX(e.touches[0].clientX);
       }
     };
@@ -58,13 +58,13 @@ export default function Projects() {
     };
   }, [touchStartX]);
 
-  // Auto-rotate interval
+
   useEffect(() => {
     const id = setInterval(() => setRotation((prev) => prev + 2), 100);
     return () => clearInterval(id);
   }, []);
 
-  // Responsive radius
+
   useEffect(() => {
     const handleResize = () => {
       setRadius(window.innerWidth <= 768 ? RADIUS_MOBILE : RADIUS_DESKTOP);

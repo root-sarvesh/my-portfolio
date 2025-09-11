@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 html, body {
   height: 100%;
@@ -21,7 +22,7 @@ html, body {
   justify-content: center;
 }
 
-/* General Reset & Base */
+
 body {
   margin: 0;
   padding: 0;
@@ -31,7 +32,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -71,13 +71,8 @@ body {
   font-weight: 600;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-/* 
-  Home (Hero) Page Styles
-  Matches layout, fonts, colors, spacing, and responsiveness
-  for homepage image at /reference/homepage-design.png
-*/
+
 
 .hero__background {
   height: 100vh;
@@ -99,8 +94,7 @@ body {
   gap: 6rem;
   align-items: center;
   position: relative;
-  /*z-index: 2;*/
-  margin-top: -30px; /* Move text block up by 30px */
+  margin-top: -30px; 
 }
 
 .hero__content {
@@ -193,7 +187,7 @@ body {
 
 .hero__image-container {
   position: relative;
-  width: 450px;   /* make it a square */
+  width: 450px;  
   height: 450px;
   border-radius: 50%;
   overflow: hidden;
@@ -226,15 +220,12 @@ body {
   bottom: -25px;
   background: linear-gradient(135deg, #b95650 0%, #a0443e 100%);
   border-radius: 24px;
- /* z-index: 1;*/
   opacity: 0.15;
 }
 
-/* Decorative elements */
 
 
 .hero__background::after {
-  content: '';
   position: absolute;
   bottom: 15%;
   left: 10%;
@@ -243,15 +234,12 @@ body {
   background: linear-gradient(135deg, #a0443e 0%, #8b3a35 100%);
   border-radius: 50%;
   opacity: 0.05;
- /* z-index: 1;*/
 }
 
 
 
 
-/* ========================= */
 /* MOBILE RESPONSIVE STYLES  */
-/* ========================= */
 
 @media (max-width: 1200px) {
   .hero {
@@ -281,11 +269,11 @@ body {
 
 @media (max-width: 768px) {
    .hero {
-    grid-template-columns: 1fr; /* stack columns */
+    grid-template-columns: 1fr; 
     text-align: center;
     gap: 3rem;
     padding: 0 2rem;
-    justify-items: center; /* center content horizontally */
+    justify-items: center; 
   }
 
     .hero__content {
@@ -295,7 +283,7 @@ body {
 
   .hero__image-container {
     margin-top: 0;
-    justify-self: center; /* ensures the image container centers */
+    justify-self: center;
   }
   
   .hero__heading {
@@ -363,7 +351,7 @@ body {
 
   .hero__image-container {
     margin-top: -20px;
-    justify-self: center; /* center the image */
+    justify-self: center; 
   }
 
   .hero__image {
